@@ -9,9 +9,7 @@ export const designTokens = {
   ...JSONstyles,
 }
 
-export const baseUnit = (
-  'Sizes80' in JSONstyles ? (JSONstyles as any).Sizes80 / 10 : 0
-).toString()
+export const baseUnit = 'Sizes80' in JSONstyles ? JSONstyles.Sizes80 / 10 : 0
 
 export const FontFrankH1 = styled.h1`
   font-family: ${designTokens?.FontFrankH1?.fontFamily || fallbackFont};

@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import { ContentfulSectionHero } from '../shared/ContentfulTypes'
 import { Button } from '../design-system/the-button'
 import {
+  baseUnit,
   designTokens,
   FontFrankH1,
   FontFrankH2,
@@ -31,7 +32,7 @@ const StyledParagraph = styled.p`
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: ${designTokens?.baseUnit * 2}px;
+  grid-gap: ${baseUnit * 2}px;
   width: 70vw;
 `
 
@@ -42,7 +43,6 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
     demoParagraph,
     demoButtonText,
     demoButtonStyle,
-    demoButtonColor,
   } = data
   return (
     <StyledSection>
