@@ -7,6 +7,10 @@ import Header from './Header'
 import Seo from './Seo'
 import { PageWrapperStandard } from '../shared/ContentfulTypes'
 import * as designSystemCss from '../../build/css/_variables.css'
+import {
+  fallbackFont,
+  isDesignTokensAvailable,
+} from '../design-system/style-imports'
 
 // import styles from '../../build/json/styles.json'
 
@@ -38,7 +42,7 @@ const Wrapper = styled('div')`
 const globalStyles = css`
   ${whyteinktrap}
   ${designSystemCss}
-  color: var(--color-primary100);
+  font-family: ${isDesignTokensAvailable ? 'ABC Whyte Inktrap' : fallbackFont};
 `
 
 //   :root {

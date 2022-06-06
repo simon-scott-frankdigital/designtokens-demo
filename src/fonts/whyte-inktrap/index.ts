@@ -48,25 +48,25 @@ const FontIndex = `
   
   @font-face {
     font-display: block;
-    font-family: '${JSONstyles.FontFrankH1.fontFamily}';
+    font-family: 'h1-heading';
     src: url(${ABCWhyteInktrapWoff2}) format('woff2'),
       url(${ABCWhyteInktrapWoff}) format('woff');
   }
   @font-face {
     font-display: block;
-    font-family: '${JSONstyles.FontFrankH2.fontFamily}';
+    font-family: 'h2-heading';
     src: url(${ABCWhyteInktrapWoff2}) format('woff2'),
       url(${ABCWhyteInktrapWoff}) format('woff');
   }
   @font-face {
     font-display: block;
-    font-family: '${JSONstyles.FontFrankH3.fontFamily}';
+    font-family: 'h2-heading';
     src: url(${ABCWhyteInktrapWoff2}) format('woff2'),
       url(${ABCWhyteInktrapWoff}) format('woff');
   }
   @font-face {
     font-display: block;
-    font-family: '${JSONstyles.FontFrankH4.fontFamily}';
+    font-family: 'h4-heading';
     src: url(${ABCWhyteInktrapWoff2}) format('woff2'),
       url(${ABCWhyteInktrapWoff}) format('woff');
   }

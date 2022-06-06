@@ -1,8 +1,12 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { ContentfulSectionHero } from '../shared/ContentfulTypes'
-import JSONstyles from '../../build/json/styles.json'
 import { Button } from '../design-system/the-button'
+import {
+  isDesignTokensAvailable,
+  designTokens,
+  fallbackFont,
+} from '../design-system/style-imports'
 
 type HeroProps = {
   data: ContentfulSectionHero
@@ -10,24 +14,24 @@ type HeroProps = {
 
 // font-family: 'Helvitica Neue', Helvetica, Arial, sans-serif;
 const StyledHeading1 = styled.h1`
-  font-family: 'Whyte Inktrap Regular';
-  color: var(--color-primary100);
-  font-style: ${JSONstyles.FontFrankH1.fontStyle};
-  font-weight: ${JSONstyles.FontFrankH1.fontWeight};
-  font-size: ${JSONstyles.FontFrankH1.fontSize}px;
-  line-height: ${JSONstyles.FontFrankH1.lineHeight}px;
+  font-family: ${isDesignTokensAvailable ? 'ABC Whyte Inktrap' : fallbackFont};
+  color: var(--color-primary400);
+  font-style: ${isDesignTokensAvailable ? '' : 'normal'};
+  font-weight: ${isDesignTokensAvailable ? '' : 'normal'};
+  font-size: ${isDesignTokensAvailable ? 'px' : ''};
+  line-height: ${isDesignTokensAvailable ? 'px' : ''};
 `
 
 const StyledHeading2 = styled.h2`
-  font-family: ${JSONstyles.FontFrankH2.fontFamily};
+  font-family: ${isDesignTokensAvailable ? 'ABC Whyte Inktrap' : fallbackFont};
 `
 
 const StyledParagraph = styled.p`
-  font-family: 'Helvitica Neue', Helvetica, Arial, sans-serif;
-  font-style: ${JSONstyles.FontFrankTextM.fontStyle};
-  font-weight: ${JSONstyles.FontFrankTextM.fontWeight};
-  font-size: ${JSONstyles.FontFrankTextM.fontSize}px;
-  line-height: ${JSONstyles.FontFrankTextM.lineHeight}px;
+  font-family: ${isDesignTokensAvailable ? 'ABC Whyte Inktrap' : fallbackFont};
+  font-style: ${''};
+  font-weight: ${''};
+  font-size: ${''};
+  line-height: ${''};
 `
 
 const Grid = styled.div`
@@ -58,7 +62,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
             text={demoButtonText}
             type={demoButtonStyle}
             linkto={'https://www.google.com'}
-            textStyle={JSONstyles.FontFrankTextM}
+            // textStyle={designTokens.FontFrankTextM}
           />
         </div>
       </Grid>
