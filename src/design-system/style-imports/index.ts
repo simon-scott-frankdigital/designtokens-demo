@@ -2,9 +2,6 @@ import styled from '@emotion/styled'
 import JSONstyles from '../../../build/json/styles.json'
 export const fallbackFont = `'Helvitica Neue', Helvetica, Arial, sans-serif`
 export const isDesignTokensAvailable = Boolean(Object.keys(JSONstyles).length)
-type genericObjectShape = {
-  [key: string]: genericObjectShape
-}
 export const designTokens = {
   ...JSONstyles,
 }
@@ -34,30 +31,3 @@ export const FontFrankH3 = styled.h3`
   font-size: ${designTokens?.FontFrankH3?.fontSize + 'px' || 'inherit'};
   line-height: ${designTokens?.FontFrankH3?.lineHeight + 'px' || 'inherit'};
 `
-
-// key access util
-type genericObjectStringNumberShape = {
-  [key: string]: genericObjectStringNumberShape | string | number
-}
-export function propName(
-  prop: genericObjectStringNumberShape | string | number,
-  value: unknown
-) {
-  let res = ''
-  if (typeof prop === 'string' || typeof prop === 'number') {
-    return prop.toString()
-  }
-  for (let i in prop) {
-    if (typeof prop[i] === 'object') {
-      if (propName(prop[i], value)) {
-        return res
-      }
-    } else {
-      if (prop[i] == value) {
-        res = i
-        return res
-      }
-    }
-  }
-  return 'missing'
-}

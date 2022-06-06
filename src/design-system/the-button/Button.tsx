@@ -32,7 +32,7 @@ const StyledChungus = styled.a`
 export type ButtonTypes = 'regular' | 'bigChungus'
 
 type Props = {
-  color: string
+  color?: string
   text: string
   type: ButtonTypes
   linkto: string
@@ -51,7 +51,13 @@ type Props = {
   }
 }
 
-const Button: React.FC<Props> = ({ color, text, type, linkto, textStyle }) => {
+const Button: React.FC<Props> = ({
+  color = '#ffffff',
+  text,
+  type,
+  linkto,
+  textStyle,
+}) => {
   const StyledButtonText = styled.span`
     font-style: ${textStyle?.fontStyle || 'normal'};
     font-weight: ${textStyle?.fontWeight || '400'};

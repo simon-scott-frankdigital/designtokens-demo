@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Button } from '../design-system/the-button'
-import { designTokens, propName } from '../design-system/style-imports'
+import { designTokens } from '../design-system/style-imports'
 
 const Grid = styled.div`
   display: grid;
