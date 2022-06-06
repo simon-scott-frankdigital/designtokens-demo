@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
-import JSONstyles from '../../../build/json/styles.json'
 import { css } from '@emotion/react'
+import { designTokens } from '../style-imports'
 
 const commonStyles = css`
   cursor: pointer;
@@ -10,22 +10,23 @@ const commonStyles = css`
   max-width: fit-content;
   box-sizing: border-box;
   color: black;
-  border-radius: 40px;
-  border: 4px solid #252a2e;
+  border-radius: ${designTokens.Sizes40}px;
+  border: 3px solid #252a2e;
 `
 
 const StyledButton = styled.a`
   ${commonStyles}
-  background: ${({ color }: { color: ColorTypes | string }) =>
-    color in JSONstyles ? JSONstyles[color as ColorTypes] : '#ffffff'};
-  padding: 4px 24px;
+  background: ${({ color }: { color: keyof typeof designTokens }) =>
+    color in designTokens ? designTokens[color] : '#ffffff'};
+  padding: 3px 24px;
   height: 34px;
 `
 
 const StyledChungus = styled.a`
   ${commonStyles}
-  background: ${({ color }: { color: ColorTypes | string }) =>
-    color in JSONstyles ? JSONstyles[color as ColorTypes] : '#ffffff'};
+  background: ${({ color }: { color: keyof typeof designTokens }) => {
+    return designTokens[color]
+  }};
   padding: 5px 45px;
   height: 50px;
   font-size: 22px;
@@ -37,19 +38,8 @@ export type ButtonTypes =
   | 'withIconRight'
   | 'bigChungus'
 
-// these types would be awesome if we could generate from json!!
-export type ColorTypes =
-  | 'ColorColorRed'
-  | 'ColorColorBlue'
-  | 'ColorColorGreen'
-  | 'ColorColorPurpledark'
-  | 'ColorColorPurple'
-  | 'ColorColorPink'
-  | 'ColorColorYellow'
-
 type Props = {
-  // onClick: () => void
-  color: ColorTypes | string
+  color: string
   text: string
   type: ButtonTypes
   linkto: string
@@ -79,7 +69,11 @@ const Button: React.FC<Props> = ({ color, text, type, linkto, textStyle }) => {
   switch (type) {
     case 'bigChungus':
       return (
-        <StyledChungus target={'_blank'} href={linkto} color={color || ''}>
+        <StyledChungus
+          target={'_blank'}
+          href={linkto}
+          color={color as keyof typeof designTokens}
+        >
           <StyledButtonText>{text}</StyledButtonText>
         </StyledChungus>
       )
@@ -89,14 +83,14 @@ const Button: React.FC<Props> = ({ color, text, type, linkto, textStyle }) => {
 
     case 'regular':
       return (
-        <StyledButton color={color}>
+        <StyledButton color={color as keyof typeof designTokens}>
           <StyledButtonText>{text}</StyledButtonText>
         </StyledButton>
       )
 
     default:
       return (
-        <StyledButton color={color}>
+        <StyledButton color={color as keyof typeof designTokens}>
           <StyledButtonText>{text}</StyledButtonText>
         </StyledButton>
       )

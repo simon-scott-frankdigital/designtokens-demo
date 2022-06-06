@@ -16,7 +16,7 @@ const StyledTopSection = styled.div`
   align-items: center;
 
   cursor: pointer;
-  border-bottom: solid 4px;
+  border-bottom: solid 3px;
 `
 
 const StyledHeading = styled.p`
