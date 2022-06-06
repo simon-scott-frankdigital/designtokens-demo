@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
-import JSONstyles from '../../../build/json/styles.json'
 import { css } from '@emotion/react'
+import { designTokens } from '../style-imports'
 
 const commonStyles = css`
   cursor: pointer;
@@ -10,14 +10,14 @@ const commonStyles = css`
   max-width: fit-content;
   box-sizing: border-box;
   color: black;
-  border-radius: 40px;
+  border-radius: ${designTokens.sizes40};
   border: 4px solid #252a2e;
 `
 
 const StyledButton = styled.a`
   ${commonStyles}
   background: ${({ color }: { color: ColorTypes | string }) =>
-    color in JSONstyles ? JSONstyles[color as ColorTypes] : '#ffffff'};
+    color in designTokens ? designTokens[color as ColorTypes] : '#ffffff'};
   padding: 4px 24px;
   height: 34px;
 `
@@ -25,7 +25,7 @@ const StyledButton = styled.a`
 const StyledChungus = styled.a`
   ${commonStyles}
   background: ${({ color }: { color: ColorTypes | string }) =>
-    color in JSONstyles ? JSONstyles[color as ColorTypes] : '#ffffff'};
+    color in designTokens ? designTokens[color as ColorTypes] : '#ffffff'};
   padding: 5px 45px;
   height: 50px;
   font-size: 22px;
