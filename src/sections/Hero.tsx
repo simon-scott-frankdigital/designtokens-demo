@@ -11,6 +11,7 @@ type HeroProps = {
 // font-family: 'Helvitica Neue', Helvetica, Arial, sans-serif;
 const StyledHeading1 = styled.h1`
   font-family: 'Whyte Inktrap Regular';
+  color: var(--color-primary100);
   font-style: ${JSONstyles.FontFrankH1.fontStyle};
   font-weight: ${JSONstyles.FontFrankH1.fontWeight};
   font-size: ${JSONstyles.FontFrankH1.fontSize}px;
