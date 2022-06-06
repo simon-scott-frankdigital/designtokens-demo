@@ -12,8 +12,6 @@ import {
   isDesignTokensAvailable,
 } from '../design-system/style-imports'
 
-// import styles from '../../build/json/styles.json'
-
 const Layout: React.FC<PageWrapperStandard> = ({ children, seo }) => {
   return (
     <Wrapper>
@@ -42,101 +40,29 @@ const Wrapper = styled('div')`
 const globalStyles = css`
   ${whyteinktrap}
   ${designSystemCss}
-  font-family: ${isDesignTokensAvailable ? 'ABC Whyte Inktrap' : fallbackFont};
+  * {
+    font-family: ${
+      isDesignTokensAvailable ? 'ABC Whyte Inktrap' : fallbackFont
+    };
+  }
+  :root {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      margin: 0;
+    }
+    span {
+      ${
+        isDesignTokensAvailable
+          ? 'font-family: Whyte Inktrap Heavy; font-size: 1rem;'
+          : fallbackFont + '; font-size: 1rem;'
+      }};
+    }
+  }
 `
-
-//   :root {
-//     --breadText: 16px;
-//     --breadTextMedium: 18px;
-//     --breadTextLarge: 20px;
-//     --colorGrey: #f2f2f2;
-//     --color: #9f9fc3;
-//   }
-//   html {
-//     scroll-padding-top: 20px;
-//     scroll-behavior: smooth;
-//   }
-//   body {
-//     font-family: Helvetica, Arial, sans-serif;
-//     overflow-x: hidden;
-//   }
-//   * {
-//     font-family: 'Whyte Inktrap Regular';
-//     // outline: auto;
-//   }
-//   *::before,
-//   *::after {
-//     box-sizing: border-box;
-//   }
-//   h1,
-//   h3,
-//   h4,
-//   h5,
-//   h6 {
-//   }
-//   h1 {
-//     font-size: 80px;
-//     @media (min-width: 1200px) {
-//     }
-//     @media (min-width: 1500px) {
-//     }
-//   }
-//   h3 {
-//     @media (min-width: 1200px) {
-//     }
-//   }
-//   h4 {
-//     @media (min-width: 900px) {
-//     }
-//   }
-//   body,
-//   h1,
-//   h3,
-//   h4,
-//   p,
-//   figure,
-//   blockquote,
-//   dl,
-//   dd {
-//     margin: 0;
-//   }
-//   ul[role='list'],
-//   ol[role='list'] {
-//     list-style: none;
-//   }
-//   html:focus-within {
-//     scroll-behavior: smooth;
-//   }
-//   body {
-//     min-height: 100vh;
-//     text-rendering: optimizeSpeed;
-//   }
-//   img,
-//   picture {
-//     max-width: 100%;
-//     display: §;
-//   }
-//   @media (prefers-reduced-motion: reduce) {
-//     html:focus-within {
-//       scroll-behavior: auto;
-//     }
-//     *,
-//     *::before,
-//     *::after {
-//       // animation-duration: 0.01ms !important;
-//       // animation-iteration-count: 1 !important;
-//       // transition-duration: 0.01ms !important;
-//       // scroll-behavior: auto !important;
-//     }
-//   }
-//   a {
-//     text-decoration: none;
-//     color: ${styles['ColorColorBlue']};
-//   }
-//   p {
-//   }
-//   b {
-//     font-weight: bold;
-//   }
 
 export default Layout

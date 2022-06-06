@@ -3,9 +3,9 @@ import styled from '@emotion/styled'
 import { ContentfulSectionHero } from '../shared/ContentfulTypes'
 import { Button } from '../design-system/the-button'
 import {
-  isDesignTokensAvailable,
   designTokens,
-  fallbackFont,
+  FontFrankH1,
+  FontFrankH2,
 } from '../design-system/style-imports'
 
 type HeroProps = {
@@ -13,31 +13,25 @@ type HeroProps = {
 }
 
 // font-family: 'Helvitica Neue', Helvetica, Arial, sans-serif;
-const StyledHeading1 = styled.h1`
-  font-family: ${isDesignTokensAvailable ? 'ABC Whyte Inktrap' : fallbackFont};
-  color: var(--color-primary400);
-  font-style: ${isDesignTokensAvailable ? '' : 'normal'};
-  font-weight: ${isDesignTokensAvailable ? '' : 'normal'};
-  font-size: ${isDesignTokensAvailable ? 'px' : ''};
-  line-height: ${isDesignTokensAvailable ? 'px' : ''};
+const StyledHeading1 = styled(FontFrankH1)`
+  margin: 0 auto !important;
 `
-
-const StyledHeading2 = styled.h2`
-  font-family: ${isDesignTokensAvailable ? 'ABC Whyte Inktrap' : fallbackFont};
+const StyledHeading2 = styled(FontFrankH2)`
+  font-size: ${designTokens.Sizes40}px !important;
 `
 
 const StyledParagraph = styled.p`
-  font-family: ${isDesignTokensAvailable ? 'ABC Whyte Inktrap' : fallbackFont};
-  font-style: ${''};
-  font-weight: ${''};
-  font-size: ${''};
-  line-height: ${''};
+  font-family: ${designTokens.FontFrankTextM.fontFamily};
+  font-style: ${designTokens.FontFrankTextM.fontStyle};
+  font-weight: ${designTokens.FontFrankTextM.fontWeight};
+  font-size: ${designTokens.FontFrankTextM.fontSize}px;
+  line-height: ${designTokens.FontFrankTextM.lineHeight}px;
 `
 
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: ${isDesignTokensAvailable ? designTokens.spacing : '16px'};
+  grid-gap: ${designTokens.baseUnit * 2}px;
   width: 70vw;
 `
 
@@ -62,7 +56,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
             text={demoButtonText}
             type={demoButtonStyle}
             linkto={'https://www.google.com'}
-            // textStyle={designTokens.FontFrankTextM}
+            textStyle={designTokens.FontFrankTextM}
           />
         </div>
       </Grid>

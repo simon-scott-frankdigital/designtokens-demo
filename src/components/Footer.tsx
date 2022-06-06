@@ -1,24 +1,23 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import JSONstyles from '../../build/json/styles.json'
 import { Button } from '../design-system/the-button'
 import { css } from '@emotion/react'
 import ScrollTargetableElement from './ScrollTargetableElement'
+import { designTokens, propName } from '../design-system/style-imports'
 
 const Grid = styled.div`
   display: grid;
   grid-gap: 8px;
   padding: 0 5vw;
   grid-template-columns: repeat(12, 1fr);
-
-  // max-width: 1024px;
   margin: 0 auto;
 `
+
 const Flex = styled.div`
   padding-bottom: 40px;
   display: flex;
   grid-column: span 12;
-  border-bottom: black solid 4px;
+  border-bottom: black solid 3px;
 `
 
 // font-family: Whyte Inktrap Bold;
@@ -47,7 +46,7 @@ const StyledFooter = styled.section`
 `
 
 const Spacer = styled.div`
-  padding: 10px;
+  padding: ${designTokens.Sizes80 / 10}px;
 `
 
 const textContentCommon = css`
@@ -58,27 +57,6 @@ const textContentCommon = css`
     grid-column: 1/13;
     text-align: center;
   }
-`
-
-const TextContent1 = styled.div`
-  grid-column: 1/5;
-  ${textContentCommon}
-`
-
-const TextContent2 = styled.div`
-  grid-column: 5/9;
-  ${textContentCommon}
-`
-
-const FlexContentLeft = styled.div`
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-gap: 8px;
-  height: inherit;
-  @media (max-width: 1024px) {
-    flex-direction: column;
-  }
-  padding: 0 5vw;
 `
 
 const OverlappingDivLeft = styled.div`
@@ -118,18 +96,12 @@ const StyledH4 = styled.h4`
   line-height: 35px;
 `
 
-const Mailto = styled.a`
-  text-decoration: underline;
-  color: ${JSONstyles['ColorColorBlue']};
-`
-
 const Footer: React.FC = () => {
   return (
     <ScrollTargetableElement id="contact">
       <>
         <Grid>
           <Flex>
-            {/* <img style={{ gridColumnStart: '2' }} src={cross} /> */}
             <MoreInfo>Frank Demo: Design Tokens!</MoreInfo>
           </Flex>
         </Grid>
@@ -139,33 +111,21 @@ const Footer: React.FC = () => {
             <OverlappingDivRight>
               <Button
                 type={'bigChungus'}
-                color={
-                  Object.keys(JSONstyles).find(
-                    (value) => value === 'ColorPrimary50'
-                  ) || ''
-                }
+                color={propName(designTokens, designTokens.ColorPrimary100)}
                 text={'Facebook'}
                 linkto={'https://www.facebook.com/frankdigital.se/'}
               />
               <Spacer />
               <Button
                 type={'bigChungus'}
-                color={
-                  Object.keys(JSONstyles).find(
-                    (value) => value === 'ColorPrimary60'
-                  ) || ''
-                }
+                color={propName(designTokens, designTokens.ColorPrimary200)}
                 text={'Instagram'}
                 linkto={'https://www.instagram.com/digital.frank/?hl=en'}
               />
               <Spacer />
               <Button
                 type={'bigChungus'}
-                color={
-                  Object.keys(JSONstyles).find(
-                    (value) => value === 'ColorPrimary70'
-                  ) || ''
-                }
+                color={propName(designTokens, designTokens.ColorSecondary100)}
                 text={'LinkedIn'}
                 linkto={
                   'https://www.linkedin.com/company/frank-digital-experiences/'
