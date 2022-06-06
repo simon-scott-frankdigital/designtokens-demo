@@ -16,7 +16,8 @@ const commonStyles = css`
 
 const StyledButton = styled.a`
   ${commonStyles}
-  background: ${({ color }: { color: ColorTypes }) => JSONstyles[color]};
+  background: ${({ color }: { color: ColorTypes | string }) =>
+    color in JSONstyles ? JSONstyles[color as ColorTypes] : '#ffffff'};
   padding: 4px 24px;
   height: 34px;
 `
