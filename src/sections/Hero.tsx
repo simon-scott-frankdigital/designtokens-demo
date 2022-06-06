@@ -52,7 +52,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
         <StyledParagraph>{demoParagraph.demoParagraph}</StyledParagraph>
         <div>
           <Button
-            color={demoButtonColor}
+            color={designTokens.ColorSecondary200}
             text={demoButtonText}
             type={demoButtonStyle}
             linkto={'https://www.google.com'}

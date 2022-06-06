@@ -1,5 +1,5 @@
+import * as React from 'react'
 import { graphql } from 'gatsby'
-import React from 'react'
 import { PageStandard } from '../shared/ContentfulTypes'
 import { SectionComponents } from '../utils/SectionSelector'
 import Layout from '../components/Layout'
