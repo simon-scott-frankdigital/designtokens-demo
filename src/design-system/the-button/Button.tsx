@@ -16,26 +16,20 @@ const commonStyles = css`
 
 const StyledButton = styled.a`
   ${commonStyles}
-  background: ${({ color }: { color: keyof typeof designTokens }) =>
-    color in designTokens ? designTokens[color] : '#ffffff'};
+  background: ${({ color }) => color};
   padding: 3px 24px;
   height: 34px;
 `
 
 const StyledChungus = styled.a`
   ${commonStyles}
-  background: ${({ color }: { color: keyof typeof designTokens }) =>
-    color in designTokens ? designTokens[color] : '#ffffff'};
+  background: ${({ color }) => color};
   padding: 5px 45px;
   height: 50px;
   font-size: 22px;
 `
 
-export type ButtonTypes =
-  | 'regular'
-  | 'withIconLeft'
-  | 'withIconRight'
-  | 'bigChungus'
+export type ButtonTypes = 'regular' | 'bigChungus'
 
 type Props = {
   color: string
@@ -68,28 +62,21 @@ const Button: React.FC<Props> = ({ color, text, type, linkto, textStyle }) => {
   switch (type) {
     case 'bigChungus':
       return (
-        <StyledChungus
-          target={'_blank'}
-          href={linkto}
-          color={color as keyof typeof designTokens}
-        >
+        <StyledChungus target={'_blank'} href={linkto} color={color}>
           <StyledButtonText>{text}</StyledButtonText>
         </StyledChungus>
       )
 
-    case 'withIconLeft':
-      return <></>
-
     case 'regular':
       return (
-        <StyledButton color={color as keyof typeof designTokens}>
+        <StyledButton color={color}>
           <StyledButtonText>{text}</StyledButtonText>
         </StyledButton>
       )
 
     default:
       return (
-        <StyledButton color={color as keyof typeof designTokens}>
+        <StyledButton color={color}>
           <StyledButtonText>{text}</StyledButtonText>
         </StyledButton>
       )

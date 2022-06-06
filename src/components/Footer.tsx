@@ -74,21 +74,21 @@ const Footer: React.FC = () => {
           <OverlappingDivRight>
             <Button
               type={'bigChungus'}
-              color={propName(designTokens, designTokens.ColorPrimary100)}
+              color={designTokens.ColorPrimary100}
               text={'Facebook'}
               linkto={'https://www.facebook.com/frankdigital.se/'}
             />
             <Spacer />
             <Button
               type={'bigChungus'}
-              color={propName(designTokens, designTokens.ColorPrimary200)}
+              color={designTokens.ColorPrimary200}
               text={'Instagram'}
               linkto={'https://www.instagram.com/digital.frank/?hl=en'}
             />
             <Spacer />
             <Button
               type={'bigChungus'}
-              color={propName(designTokens, designTokens.ColorSecondary100)}
+              color={designTokens.ColorSecondary100}
               text={'LinkedIn'}
               linkto={
                 'https://www.linkedin.com/company/frank-digital-experiences/'
