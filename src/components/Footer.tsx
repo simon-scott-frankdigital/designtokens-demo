@@ -20,15 +20,17 @@ const Flex = styled.div`
   border-bottom: black solid 3px;
 `
 
+// font-family: Whyte Inktrap Bold;
 const MoreInfo = styled.div`
   margin-left: 16px;
-  font-family: Whyte Inktrap Bold;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
   line-height: 35px;
 `
 
+// background-color: ${JSONstyles.ColorColorPurple};
+// height: 600px;
 const BG = styled.div`
   @media (max-width: 1024px) {
     height: unset;
