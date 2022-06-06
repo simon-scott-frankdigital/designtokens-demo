@@ -1,0 +1,5 @@
+,\s+"extensions"([\n]|[^}])+\}\s+\}
+
+is the regex that we can use to find and replace all extension data in the design-tokens-example.json file
+
+just to thin out the data a bit.

@@ -1,0 +1,209 @@
+{
+  "contentTypes": {
+    "Page": {
+      "name": "Page",
+      "displayField": "title",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "required": true,
+          "type": "Symbol"
+        },
+        {
+          "id": "seoTitle",
+          "name": "Seo Title",
+          "type": "Symbol"
+        },
+        {
+          "id": "seoDescription",
+          "name": "Seo Description",
+          "required": true,
+          "type": "Symbol"
+        },
+        {
+          "id": "slug",
+          "name": "Slug",
+          "type": "Symbol"
+        },
+        {
+          "id": "sections",
+          "name": "Sections",
+          "type": "Array",
+          "items": { "type": "Link", "linkType": "Entry" }
+        }
+      ],
+      "entries": {
+        "about": {
+          "linkTo": {
+            "entry": "linkAbout",
+            "field": "links",
+            "entry2": "linkDropdown",
+            "field2": "links"
+          },
+          "id": "aboutPage",
+          "title": "Page - About",
+          "seoDescription": "Our About Page",
+          "slug": "about"
+        },
+        "home": {
+          "id": "homePage",
+          "title": "Page - Home",
+          "seoTitle": "Home",
+          "seoDescription": "Our Home Page",
+          "slug": "home"
+        },
+        "contact": {
+          "linkTo": {
+            "entry": "linkContact",
+            "field": "links",
+            "entry2": "linkDropdown",
+            "field2": "links"
+          },
+          "title": "Page - Contact",
+          "id": "contactPage",
+          "seoTitle": "Contact",
+          "seoDescription": "Our Contact Page",
+          "slug": "contact"
+        }
+      }
+    },
+    "Menu": {
+      "name": "Menu",
+      "displayField": "title",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "required": true,
+          "type": "Symbol"
+        },
+        {
+          "id": "logo",
+          "name": "Logo",
+          "type": "Link",
+          "linkType": "Asset"
+        },
+        {
+          "id": "menuLinks",
+          "name": "Menu Links",
+          "type": "Array",
+          "items": { "type": "Link", "linkType": "Entry" }
+        }
+      ],
+      "entries": {
+        "Header Navbar": {
+          "id": "headerNavbar",
+          "title": "Menu - Header Navbar"
+        }
+      }
+    },
+    "Menu Link": {
+      "name": "Menu Link",
+      "displayField": "title",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol"
+        },
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol"
+        },
+
+        {
+          "id": "links",
+          "name": "Links",
+          "type": "Array",
+          "items": { "type": "Link", "linkType": "Entry" }
+        }
+      ],
+      "entries": {
+        "Menu Link Contact": {
+          "linkTo": {
+            "entry": "headerNavbar",
+            "field": "menuLinks"
+          },
+          "id": "linkContact",
+          "name": "Contact",
+          "title": "Menu Link - Contact"
+        },
+        "Menu Link About": {
+          "linkTo": {
+            "entry": "headerNavbar",
+            "field": "menuLinks"
+          },
+          "id": "linkAbout",
+          "title": "Menu Link - About",
+          "name": "About"
+        },
+        "Menu Link Dropdown": {
+          "linkTo": {
+            "entry": "headerNavbar",
+            "field": "menuLinks"
+          },
+          "id": "linkDropdown",
+          "title": "Menu Link - Dropdown",
+          "name": "Dropdown"
+        }
+      }
+    },
+
+    "Section Hero": {
+      "name": "Section Hero",
+      "displayField": "title",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "required": true,
+          "type": "Symbol"
+        },
+        {
+          "id": "heading",
+          "name": "Heading",
+          "required": true,
+          "type": "Symbol"
+        },
+        {
+          "id": "image",
+          "name": "Image",
+          "type": "Link",
+          "linkType": "Asset"
+        }
+      ],
+      "entries": {
+        "homePageHero": {
+          "linkTo": {
+            "entry": "homePage",
+            "field": "sections"
+          },
+          "title": "Section Hero - Homepage",
+          "heading": "Homepage Hero",
+          "id": "sectionHomepageHero"
+        },
+        "aboutPageHero": {
+          "linkTo": {
+            "entry": "aboutPage",
+            "field": "sections"
+          },
+          "title": "Section Hero - About Page",
+          "heading": "About Page Hero",
+          "id": "sectionAboutPageHero"
+        },
+
+        "contactPageHero": {
+          "linkTo": {
+            "entry": "contactPage",
+            "field": "sections"
+          },
+          "title": "Section Hero - Contact Page",
+          "heading": "Contact Page Hero",
+          "id": "sectionContactPageHero"
+        }
+      }
+    }
+  }
+}

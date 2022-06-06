@@ -1,0 +1,13 @@
+# node
+node_modules/
+
+# gatsby build folders
+.cache/
+public
+
+# env variables
+.env*
+.env
+
+# gatsby typegen generated types
+**__generated__
