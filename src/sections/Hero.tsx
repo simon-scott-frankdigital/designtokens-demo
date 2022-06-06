@@ -21,17 +21,17 @@ const StyledHeading2 = styled(FontFrankH2)`
 `
 
 const StyledParagraph = styled.p`
-  font-family: ${designTokens.FontFrankTextM.fontFamily};
-  font-style: ${designTokens.FontFrankTextM.fontStyle};
-  font-weight: ${designTokens.FontFrankTextM.fontWeight};
-  font-size: ${designTokens.FontFrankTextM.fontSize}px;
-  line-height: ${designTokens.FontFrankTextM.lineHeight}px;
+  font-family: ${designTokens.FontFrankTextM?.fontFamily};
+  font-style: ${designTokens.FontFrankTextM?.fontStyle};
+  font-weight: ${designTokens.FontFrankTextM?.fontWeight};
+  font-size: ${designTokens.FontFrankTextM?.fontSize}px;
+  line-height: ${designTokens.FontFrankTextM?.lineHeight}px;
 `
 
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: ${designTokens.baseUnit * 2}px;
+  grid-gap: ${designTokens?.baseUnit * 2}px;
   width: 70vw;
 `
 

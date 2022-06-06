@@ -1,6 +1,7 @@
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 import { ContentfulRichTextGatsbyReference } from 'gatsby-source-contentful/rich-text'
-import { ButtonTypes, ColorTypes } from '../design-system/the-button/Button'
+import { designTokens } from '../design-system/style-imports'
+import { ButtonTypes } from '../design-system/the-button/Button'
 
 // Sections
 
@@ -47,7 +48,7 @@ export type ContentfulSectionHero = {
   demoParagraph: { demoParagraph: string }
   demoButtonText: string
   demoButtonStyle: ButtonTypes
-  demoButtonColor: ColorTypes
+  demoButtonColor: string
 }
 
 export type ContentfulSectionText = {}

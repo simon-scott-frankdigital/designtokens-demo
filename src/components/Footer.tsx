@@ -46,7 +46,7 @@ const StyledFooter = styled.section`
 `
 
 const Spacer = styled.div`
-  padding: ${designTokens.Sizes80 / 10}px;
+  padding: ${(designTokens.Sizes80 as number) / 10}px;
 `
 
 const textContentCommon = css`

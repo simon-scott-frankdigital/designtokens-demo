@@ -10,7 +10,7 @@ const commonStyles = css`
   max-width: fit-content;
   box-sizing: border-box;
   color: black;
-  border-radius: ${designTokens.Sizes40}px;
+  border-radius: ${designTokens?.Sizes40}px;
   border: 3px solid #252a2e;
 `
 
@@ -24,9 +24,8 @@ const StyledButton = styled.a`
 
 const StyledChungus = styled.a`
   ${commonStyles}
-  background: ${({ color }: { color: keyof typeof designTokens }) => {
-    return designTokens[color]
-  }};
+  background: ${({ color }: { color: keyof typeof designTokens }) =>
+    color in designTokens ? designTokens[color] : '#ffffff'};
   padding: 5px 45px;
   height: 50px;
   font-size: 22px;
