@@ -37,7 +37,7 @@ const StyledParagraph = styled.p`
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 16px;
+  grid-gap: ${isDesignTokensAvailable ? designTokens.spacing : '16px'};
   width: 70vw;
 `
 
